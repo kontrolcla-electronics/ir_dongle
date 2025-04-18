@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ir Dongle IrLearning</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container" style="display:none;">
+    <nav class="navbar">
+      <ul>
+        <h3>Ir Dongle</h3> 
+      </ul>
+      <ul>
+        <h3><li><a href="irlearning.html" class="selected">IrLearning</a></li></h3>
+      </ul>
+    </nav>
+    <div style="position: relative;">
+      <!--SECCIO 1-->
+      <section style="position: absolute; left: 20px; top: 15px; width: 1100px;">  
+        <div class="grid_cfg_2" style="margin-top: 10px">
+          <h4 style="padding-left:5px;">A - Ir Learned Code - Pairs in Microseconds</h4>  
+          <div class="grid_cfg_3" style="margin-top: 0px">
+            <div>
+            </div>
+            <div>
+            </div>
+            <div style="margin: 0px 0 0 18px;" >
+              <button type="button" id="btn_clear_A" class="btn btn_grey" style="width: 96px; margin: 0 6px 0 0;">Clear A</button>
+              <button type="button" id="btn_clear_B" class="btn btn_grey" style="width: 96px;">Clear B</button>
+            </div>
+
+          </div>
+
+        </div>
+        <textarea id="A" class="t_area t_area_A" style="margin-top: 15px"></textarea>
+
+        <div class="grid_cfg_2" style="margin-top: 0px">
+          <h4 style="padding-left:5px;">B - Ir User Command Edition Area</h4>
+          <div class="grid_cfg_3" style="margin-top: 0px">
+            <div style="margin: 0px 0 0 0;" >
+              <h4 style="display:inline; padding-left:65px">Repeat</h4>
+              <select class="input_cmd sel" id="repeat" style="margin-left:5px; width: 70px;">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+              </select>
+            </div>
+            <div style="margin: 0px 0 0 0;" >
+              <h4 style="display:inline">Offset Pairs</h4>
+              <select class="input_cmd sel" id="offset" style="margin-left:5px; width: 70px;">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select>
+            </div>
+            <div style="margin: 0px 0 0 10px;" >
+              <h3 style="display:inline">&#8595;</h3> 
+              <button type="button" id="btn_edit" class="btn btn_red" style="width: 196px">To Edition Area;</button>
+            </div>
+          </div>
+        </div>
+        <textarea id="B" class="t_area t_area_B" style="margin-top: 15px"></textarea>
+      </section>
+
+      <!--SECCIO 2-->
+      <section style="position: absolute; left: 1150px; top: 15px; width:200px;">
+        <!--SECCIO 2 TOP-->
+        <div style="margin: 56px 0 0 0;">
+          <div class="input_gen">
+            <div style="margin: 0px 0 0 10px;">Channel 0</div>
+              <select class="input_data input_data_chn_left" id="chn_0_bus_option">
+                <option value="0">Off</option>
+                <option value="1">A receiver / B receiver</option>
+                <option value="2">A receiver / B emitter</option>
+                <option value="3">A emitter / B emitter</option>
+              </select>
+          </div>
+          <div class="input_gen">
+            <div style="margin: 0px 0 0 10px;">Channel 1</div>
+              <select class="input_data input_data_chn_left" id="chn_1_bus_option">
+                <option value="0">Off</option>
+                <option value="1">A receiver / B receiver</option>
+                <option value="2">A receiver / B emitter</option>
+                <option value="3">A emitter / B emitter</option>
+              </select>
+          </div>
+          <div class="input_gen">
+            <div style="margin: 0px 0 0 10px;">Inner receiver</div>
+              <select class="input_data input_data_chn_left" id="chn_2_bus_option">
+                <option value="0">Off</option>
+                <option value="1">receiver</option>
+              </select>
+          </div>
+          <div style="margin: 26px 0 0 0px;" >
+            <button type="button" id="btn_save_cfg" class="btn btn_grey">Save Config</button>
+          </div>
+        </div>
+        <!--SECCIO 2 BOTTOM-->
+        <div style="margin: 74px 0 0 0;" >
+          <!--Power-->
+          <div class="grid_cfg_2" style="margin-left: -20px">
+            <div class="led" id="power_channels" style="margin: 10px 0 0 40px;"></div>
+            <div>Channels Power</div>
+          </div>
+          <!--Load-->
+          <div style="margin-top: 16px">
+            <button type="button" id="btn_load" class="btn btn_blue" style="width: 80px;" >Load</button>
+            <select class="input_cmd sel" id="command_num">
+              <option value="0">0 example</option>
+              <option value="1">1 user</option>
+              <option value="2">2 user</option>
+              <option value="3">3 user</option>
+              <option value="4">4 user</option>
+              <option value="5">5 user</option>
+              <option value="6">6 user</option>
+              <option value="7">7 user</option>
+              <option value="8">8 user</option>
+              <option value="9">9 user</option>
+              <option value="10">10 user</option>
+              <option value="11">11 user</option>
+              <option value="12">12 user</option>
+              <option value="13">13 user</option>
+              <option value="14">14 user</option>
+              <option value="15">15 user</option>
+              <option value="16">16 user</option>
+              <option value="17">17 user</option>
+              <option value="18">18 user</option>
+              <option value="19">19 user</option>
+              <option value="20">20 user</option>
+              <option value="21">21 user</option>
+              <option value="22">22 user</option>
+              <option value="23">23 user</option>
+              <option value="24">24 user</option>
+              <option value="25">25 user</option>
+              <option value="26">26 user</option>
+              <option value="27">27 user</option>
+              <option value="28">28 user</option>
+              <option value="29">29 user</option>
+              <option value="30">30 user</option>
+              <option value="31">31 user</option>
+              <option value="32">32 user</option>
+            </select>
+          </div> 
+        </div>
+        <div style="margin: 17px 0 0 0px;" >
+          <button type="button" id="btn_download" class="btn btn_grey ">Download Edition Area</button>
+        </div>
+        <div style="margin: 17px 0 0 0px;" >
+          <button type="button" id="btn_erase" class="btn btn_red" style="width: 80px;">Erase</button>
+          <button type="button" id="btn_record" class="btn btn_orange" style="width: 109px; margin: 0 0 0 6px;" >Record</button>
+        </div>
+        <div id="send_feedback"></div>
+        <div style="margin: 4px 0 0 0px;" >
+          <button type="button" id="btn_send_to" class="btn btn_green" style="width: 80px;" >Test To</button>
+          <select class="input_cmd sel" id="channel_num">
+            <option value="0" selected disabled >Channel</option>
+            <option value="1">Ch 0 A</option>
+            <option value="2">Ch 0 B</option>
+            <option value="3">Ch 1 A</option>
+            <option value="4">Ch 1 B</option>
+          </select>
+        </div>
+      </section>
+    </div>
+   <!--FI CONTAINER PAGE-->
+  </div> 
+  <!--------------------------------------------------------------->
+  <!--MODAL-->
+  <div class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Ir Dongle</h2>
+      <h1>No serial connection</h1>
+      <button type="button" class="btn btn_grey" style="margin-top: 24px" id="connect">Connect</button>
+    </div>
+  </div>
+  <!--------------------------------------------------------------->
+  <script src="script.js"></script>
+  <script src="irlearning.js"></script>
+</body>
+</html>
