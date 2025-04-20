@@ -52,12 +52,12 @@ function loadData( value ) {
 	}
   var now = get_time();
 	var objecte = {};
-  //objecte.index = load_data_index;
 	objecte.action = "load_data";
 	var parametres = JSON.stringify(objecte);
 	console.log( now + " - call load data - " + value + ' / ' + parametres);
 	// post url, parametres, HttpMethod, call back number
 	sendRequest("irlearning/load_data", parametres, "POST", 0 );
+  ciclic_timeout();
  }
 //*******************************************
 // BUTTON LOAD COMMAND -> callback 1
@@ -605,17 +605,6 @@ function closeModal() {
   modal.style.display = "none";
   modal_counter = 0;
 }
-//*******
-/*
-function check_one_css_is_loaded () 
-{ var urlSpec = "style.css"
-  var ss = document.styleSheets;
-  for ( i=0; i<ss.length; i++ )
-  { if (ss[i].href.indexOf(urlSpec) >=0)
-      container.style.display = "block";
-  }
-}
-*/
 //*********
 //  WAITING UPDATE/RECORD
 function waiting(){
@@ -645,5 +634,4 @@ function ciclic_timeout() {
   links_block = false;
 }
 //*******
-//check_one_css_is_loaded();
 openModal();
